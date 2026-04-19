@@ -1,13 +1,15 @@
 import BotanicalBg from "@/components/BotanicalBg";
+import FloatingPhoto from "@/components/FloatingPhoto";
 import Footer from "@/components/Footer";
 import NavMenu from "@/components/NavMenu";
 import ProfileHeader from "@/components/ProfileHeader";
+import SectionTitle from "@/components/SectionTitle";
 
 type Block = { title: string; text: string };
 
 const blocks: Block[] = [
   {
-    title: "Agendamento & Reserva de Horário",
+    title: "Agendamento & Reserva",
     text: `Meus atendimentos são organizados de forma exclusiva, pensando no melhor resultado para cada cliente ✨
 
 Para confirmação do horário, é necessário um sinal de 50% do valor do procedimento.
@@ -33,96 +35,126 @@ Crianças devem permanecer sob total responsabilidade e supervisão durante todo
 export default function Regras() {
   return (
     <div
-      className="min-h-screen flex items-center justify-center py-8 px-4 relative"
-      style={{ backgroundColor: "#DDD0C8" }}
+      className="min-h-screen w-full flex items-start sm:items-center justify-center relative"
+      style={{ backgroundColor: "#DDD0C8", padding: "60px 20px" }}
     >
       <BotanicalBg />
 
-      <div className="relative z-10 w-full max-w-md">
+      <div className="relative z-10 w-full max-w-[480px] mx-auto">
         <ProfileHeader />
         <NavMenu />
 
         <div
-          className="bg-white rounded-3xl shadow-2xl overflow-hidden"
-          style={{
-            borderRadius: "28px",
-            boxShadow: "0 15px 50px rgba(100, 80, 75, 0.15)",
-          }}
+          className="relative"
+          style={{ marginTop: "48px", overflow: "visible" }}
         >
+          <FloatingPhoto />
           <div
-            className="h-1.5"
-            style={{ background: "linear-gradient(90deg, #C8A19C, #91766E)" }}
-          />
+            className="bg-white shadow-2xl rounded-2xl sm:rounded-[28px]"
+            style={{
+              boxShadow: "0 15px 50px rgba(100, 80, 75, 0.15)",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              className="h-1.5"
+              style={{ background: "linear-gradient(90deg, #C8A19C, #91766E)" }}
+            />
 
-          <div className="text-center pt-12 pb-2 px-8">
-            <h1
-              className="text-3xl font-light"
+            {/* Conteúdo com padding 56px 28px 32px */}
+            <div
               style={{
-                fontFamily: "Butler, serif",
-                color: "#91766E",
-                letterSpacing: "0.5px",
+                paddingTop: "56px",
+                paddingLeft: "28px",
+                paddingRight: "28px",
+                paddingBottom: "0px",
               }}
             >
-              Regras do Espaço
-            </h1>
-            <p
-              className="text-xs mt-2"
-              style={{ color: "#C8A19C", letterSpacing: "3px" }}
-            >
-              POLÍTICAS DE ATENDIMENTO
-            </p>
-          </div>
-
-          <div className="px-9 py-6 space-y-8">
-            {blocks.map((b, i) => (
-              <div key={b.title}>
-                {i > 0 && (
-                  <div
-                    className="text-center mb-6"
-                    style={{ color: "#C8A19C", fontSize: "1rem" }}
-                  >
-                    ✦
-                  </div>
-                )}
-                <div
-                  className="flex items-center gap-3 mb-4"
+              {/* Cabeçalho */}
+              <div
+                className="text-center"
+                style={{ display: "flex", flexDirection: "column", gap: "4px" }}
+              >
+                <h1
                   style={{
-                    fontSize: "0.7rem",
-                    fontWeight: 700,
-                    letterSpacing: "2px",
-                    textTransform: "uppercase",
-                    color: "#C8A19C",
+                    fontFamily: "Butler, serif",
+                    fontSize: "22px",
+                    color: "#8a6e65",
+                    fontWeight: 400,
+                    textAlign: "center",
                   }}
                 >
-                  <div
-                    className="flex-1 h-px"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, transparent, #C8A19C, transparent)",
-                    }}
-                  />
-                  <span className="whitespace-nowrap text-center">
-                    {b.title}
-                  </span>
-                  <div
-                    className="flex-1 h-px"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, transparent, #C8A19C, transparent)",
-                    }}
-                  />
-                </div>
+                  Regras do Espaço
+                </h1>
                 <p
-                  className="text-sm leading-relaxed whitespace-pre-line text-center"
-                  style={{ color: "#4a3e3a" }}
+                  style={{
+                    fontSize: "10px",
+                    letterSpacing: "3px",
+                    color: "#b09088",
+                    textAlign: "center",
+                  }}
                 >
-                  {b.text}
+                  POLÍTICAS DE ATENDIMENTO
                 </p>
+                <div
+                  style={{
+                    width: "40px",
+                    height: "1px",
+                    background: "rgba(180, 148, 138, 0.3)",
+                    margin: "12px auto 0",
+                  }}
+                />
               </div>
-            ))}
-          </div>
 
-          <Footer />
+              {/* Blocos */}
+              <div style={{ marginTop: "24px" }}>
+                {blocks.map((b, i) => (
+                  <div key={b.title} style={{ marginBottom: "28px" }}>
+                    {i > 0 && (
+                      <div
+                        style={{
+                          color: "#c4a898",
+                          fontSize: "14px",
+                          textAlign: "center",
+                          margin: "20px auto",
+                          display: "block",
+                        }}
+                      >
+                        ✦
+                      </div>
+                    )}
+                    <SectionTitle>{b.title}</SectionTitle>
+                    <div
+                      style={{
+                        textAlign: "center",
+                        color: "#4a3e3a",
+                        lineHeight: 1.75,
+                        fontSize: "13px",
+                      }}
+                      className="sm:text-[14px]"
+                    >
+                      {b.text.split("\n\n").map((p, idx) => (
+                        <p
+                          key={idx}
+                          style={{
+                            marginBottom: "10px",
+                            whiteSpace: "pre-line",
+                          }}
+                        >
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* padding-bottom 32px antes do footer */}
+              <div style={{ height: "4px" }} />
+            </div>
+
+            <Footer />
+          </div>
         </div>
       </div>
     </div>

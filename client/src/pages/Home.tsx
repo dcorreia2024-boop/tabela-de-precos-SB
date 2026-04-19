@@ -1,7 +1,9 @@
 import BotanicalBg from "@/components/BotanicalBg";
+import FloatingPhoto from "@/components/FloatingPhoto";
 import Footer from "@/components/Footer";
 import NavMenu from "@/components/NavMenu";
 import ProfileHeader from "@/components/ProfileHeader";
+import SectionTitle from "@/components/SectionTitle";
 
 type Item = { name: string; price: string };
 type Section = { title: string; items: Item[] };
@@ -52,99 +54,116 @@ const sections: Section[] = [
 export default function Home() {
   return (
     <div
-      className="min-h-screen flex items-center justify-center py-8 px-4 relative"
-      style={{ backgroundColor: "#DDD0C8" }}
+      className="min-h-screen w-full flex items-start sm:items-center justify-center relative"
+      style={{ backgroundColor: "#DDD0C8", padding: "60px 20px" }}
     >
       <BotanicalBg />
 
-      <div className="relative z-10 w-full max-w-md">
+      <div className="relative z-10 w-full max-w-[480px] mx-auto">
         <ProfileHeader />
         <NavMenu />
 
         <div
-          className="bg-white rounded-3xl shadow-2xl overflow-hidden"
-          style={{
-            borderRadius: "28px",
-            boxShadow: "0 15px 50px rgba(100, 80, 75, 0.15)",
-          }}
+          className="relative"
+          style={{ marginTop: "48px", overflow: "visible" }}
         >
+          <FloatingPhoto />
           <div
-            className="h-1.5"
-            style={{ background: "linear-gradient(90deg, #C8A19C, #91766E)" }}
-          />
+            className="bg-white shadow-2xl rounded-2xl sm:rounded-[28px]"
+            style={{
+              boxShadow: "0 15px 50px rgba(100, 80, 75, 0.15)",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              className="h-1.5"
+              style={{ background: "linear-gradient(90deg, #C8A19C, #91766E)" }}
+            />
 
-          <div className="text-center pt-12 pb-4 px-8">
-            <h1
-              className="text-4xl font-light"
+            <div
               style={{
-                fontFamily: "Butler, serif",
-                color: "#91766E",
-                letterSpacing: "0.5px",
+                paddingTop: "56px",
+                paddingLeft: "28px",
+                paddingRight: "28px",
+                paddingBottom: "0px",
               }}
             >
-              Tabela de preços:
-            </h1>
-          </div>
-
-          <div className="px-9 py-4 space-y-6">
-            {sections.map((section) => (
-              <div key={section.title}>
-                <div
-                  className="flex items-center gap-3 mb-3"
+              {/* Cabeçalho */}
+              <div
+                style={{ display: "flex", flexDirection: "column", gap: "4px" }}
+              >
+                <h1
                   style={{
-                    fontSize: "0.65rem",
-                    fontWeight: 700,
-                    letterSpacing: "2px",
-                    textTransform: "uppercase",
-                    color: "#C8A19C",
+                    fontFamily: "Butler, serif",
+                    fontSize: "22px",
+                    color: "#8a6e65",
+                    fontWeight: 400,
+                    textAlign: "center",
                   }}
                 >
-                  <div
-                    className="flex-1 h-px"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, transparent, #C8A19C, transparent)",
-                    }}
-                  />
-                  <span className="whitespace-nowrap">{section.title}</span>
-                  <div
-                    className="flex-1 h-px"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, transparent, #C8A19C, transparent)",
-                    }}
-                  />
-                </div>
-                <div className="space-y-2">
-                  {section.items.map((item) => (
-                    <div
-                      key={item.name}
-                      className="flex items-baseline justify-between gap-2"
-                    >
-                      <span className="text-sm" style={{ color: "#4a3e3a" }}>
-                        {item.name}
-                      </span>
-                      <div
-                        className="flex-1 border-b border-dotted"
-                        style={{
-                          borderColor: "rgba(145, 118, 110, 0.3)",
-                          marginBottom: "2px",
-                        }}
-                      />
-                      <span
-                        className="text-sm font-bold"
-                        style={{ color: "#91766E", whiteSpace: "nowrap" }}
-                      >
-                        {item.price}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                  Tabela de preços
+                </h1>
+                <p
+                  style={{
+                    fontSize: "10px",
+                    letterSpacing: "3px",
+                    color: "#b09088",
+                    textAlign: "center",
+                  }}
+                >
+                  SERVIÇOS E VALORES
+                </p>
+                <div
+                  style={{
+                    width: "40px",
+                    height: "1px",
+                    background: "rgba(180, 148, 138, 0.3)",
+                    margin: "12px auto 0",
+                  }}
+                />
               </div>
-            ))}
-          </div>
 
-          <Footer />
+              {/* Seções */}
+              <div style={{ marginTop: "24px" }}>
+                {sections.map((section) => (
+                  <div key={section.title} style={{ marginBottom: "28px" }}>
+                    <SectionTitle>{section.title}</SectionTitle>
+                    <div className="space-y-2">
+                      {section.items.map((item) => (
+                        <div
+                          key={item.name}
+                          className="flex items-baseline justify-between gap-2"
+                        >
+                          <span style={{ color: "#4a3e3a", fontSize: "13px" }}>
+                            {item.name}
+                          </span>
+                          <div
+                            className="flex-1 border-b border-dotted"
+                            style={{
+                              borderColor: "rgba(145, 118, 110, 0.3)",
+                              marginBottom: "2px",
+                            }}
+                          />
+                          <span
+                            style={{
+                              color: "#91766E",
+                              fontSize: "13px",
+                              fontWeight: 700,
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {item.price}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <Footer />
+          </div>
         </div>
       </div>
     </div>

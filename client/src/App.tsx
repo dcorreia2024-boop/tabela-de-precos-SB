@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Regras from "./pages/Regras";
 import Pagamento from "./pages/Pagamento";
+import Local from "./pages/Local";
 
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/regras"} component={Regras} />
       <Route path={"/pagamento"} component={Pagamento} />
+      <Route path={"/local"} component={Local} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
