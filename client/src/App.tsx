@@ -13,7 +13,8 @@ import Local from "./pages/Local";
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      <Route path={"/"} component={Regras} />
+      <Route path={"/precos"} component={Home} />
       <Route path={"/regras"} component={Regras} />
       <Route path={"/pagamento"} component={Pagamento} />
       <Route path={"/local"} component={Local} />

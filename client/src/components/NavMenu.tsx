@@ -1,8 +1,8 @@
 import { Link, useLocation } from "wouter";
 
 const items = [
-  { href: "/regras", label: "Regras" },
-  { href: "/", label: "Preços" },
+  { href: "/", label: "Regras" },
+  { href: "/precos", label: "Preços" },
   { href: "/pagamento", label: "Pagamento" },
   { href: "/local", label: "Local" },
 ];
@@ -18,7 +18,9 @@ export default function NavMenu() {
       }}
     >
       {items.map((it) => {
-        const active = location === it.href;
+        const active =
+          location === it.href ||
+          (it.href === "/" && location === "/regras");
         return (
           <Link
             key={it.href}
