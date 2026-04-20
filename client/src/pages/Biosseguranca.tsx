@@ -57,30 +57,40 @@ export default function Biosseguranca() {
         {/* BLOCO LOCALIZAÇÃO */}
         <div style={{ marginBottom: "28px" }}>
           <SectionTitle>Localização</SectionTitle>
-          <img
-            src="/assets/biosseguranca/mesa_de_cafe.jpeg"
-            alt="Mesa de café - ambiente acolhedor"
+          <div
+            className="bio-section"
             style={{
-              width: "100%",
-              height: "200px",
-              objectFit: "cover",
-              objectPosition: "center top",
-              borderRadius: "14px",
-              boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-              display: "block",
-              marginBottom: "14px",
-            }}
-          />
-          <p
-            style={{
-              color: "#4a3e3a",
-              fontSize: "13px",
-              lineHeight: 1.7,
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
             }}
           >
-            Um espaço pensado para você se sentir em casa. Café fresquinho e um
-            ambiente aconchegante te esperam a cada visita.
-          </p>
+            <img
+              src="/assets/biosseguranca/mesa_de_cafe.jpeg"
+              alt="Mesa de café - ambiente acolhedor"
+              style={{
+                width: "45%",
+                flexShrink: 0,
+                height: "130px",
+                objectFit: "cover",
+                objectPosition: "center bottom",
+                borderRadius: "12px",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                display: "block",
+              }}
+            />
+            <p
+              style={{
+                flex: 1,
+                color: "#8a6e65",
+                fontSize: "13px",
+                lineHeight: 1.7,
+              }}
+            >
+              Um espaço pensado para você se sentir em casa. Café fresquinho e
+              um ambiente aconchegante te esperam a cada visita.
+            </p>
+          </div>
         </div>
 
         <Separator />
@@ -88,44 +98,38 @@ export default function Biosseguranca() {
         {/* BLOCO ESPAÇO */}
         <div style={{ marginBottom: "28px" }}>
           <SectionTitle>Espaço</SectionTitle>
-          <p
-            style={{
-              color: "#4a3e3a",
-              fontSize: "13px",
-              lineHeight: 1.7,
-              marginBottom: "14px",
-            }}
-          >
-            Cada atendimento é totalmente personalizado, com atenção aos
-            detalhes e às necessidades de cada cliente.
-          </p>
           <div
+            className="bio-section"
             style={{
-              position: "relative",
-              borderRadius: "14px",
-              overflow: "hidden",
-              boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
             }}
           >
+            <p
+              style={{
+                flex: 1,
+                color: "#8a6e65",
+                fontSize: "13px",
+                lineHeight: 1.7,
+              }}
+            >
+              Cada atendimento é totalmente personalizado, com atenção aos
+              detalhes e às necessidades de cada cliente.
+            </p>
             <img
               src="/assets/biosseguranca/espaco.jpeg"
               alt="Espaço de atendimento"
               style={{
-                width: "100%",
-                height: "220px",
+                width: "45%",
+                flexShrink: 0,
+                height: "130px",
                 objectFit: "cover",
-                objectPosition: "center center",
-                filter: "brightness(1.2) contrast(0.92)",
+                objectPosition: "right center",
+                filter: "brightness(1.3) contrast(0.9)",
+                borderRadius: "12px",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
                 display: "block",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                pointerEvents: "none",
-                background:
-                  "linear-gradient(to bottom, transparent 50%, rgba(240,232,224,0.25) 100%)",
               }}
             />
           </div>
@@ -141,7 +145,7 @@ export default function Biosseguranca() {
               color: "#4a3e3a",
               fontSize: "13px",
               lineHeight: 1.7,
-              marginBottom: "14px",
+              marginBottom: "10px",
             }}
           >
             Materiais esterilizados em autoclave e itens descartáveis de uso

@@ -29,6 +29,16 @@ body {
   }
 }
 
+@media (max-width: 400px) {
+  .bio-section {
+    flex-direction: column !important;
+  }
+  .bio-section img {
+    width: 100% !important;
+    height: 160px !important;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
