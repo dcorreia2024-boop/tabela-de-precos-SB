@@ -5,6 +5,7 @@ const items = [
   { href: "/precos", label: "Preços" },
   { href: "/pagamento", label: "Pagamento" },
   { href: "/local", label: "Local" },
+  { href: "/biosseguranca", label: "Biosseg." },
 ];
 
 export default function NavMenu() {

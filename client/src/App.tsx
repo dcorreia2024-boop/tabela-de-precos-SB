@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Regras from "./pages/Regras";
 import Pagamento from "./pages/Pagamento";
 import Local from "./pages/Local";
+import Biosseguranca from "./pages/Biosseguranca";
 
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path={"/regras"} component={Regras} />
       <Route path={"/pagamento"} component={Pagamento} />
       <Route path={"/local"} component={Local} />
+      <Route path={"/biosseguranca"} component={Biosseguranca} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
