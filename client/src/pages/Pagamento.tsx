@@ -128,8 +128,6 @@ export default function Pagamento() {
               }}
             >
               Crédito com acréscimo
-              <br />
-              Taxa por conta da cliente
             </p>
           </div>
         </div>
