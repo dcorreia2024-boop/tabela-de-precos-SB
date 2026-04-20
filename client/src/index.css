@@ -21,11 +21,14 @@ body {
 
 @media (max-width: 599px) {
   .navbar {
-    justify-content: flex-start !important;
-    padding: 0 20px !important;
+    justify-content: center !important;
+    padding: 8px 16px !important;
+    overflow-x: visible !important;
   }
   .navbar-inner {
-    width: max-content;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100%;
   }
 }
 
@@ -35,7 +38,15 @@ body {
   }
   .bio-section img {
     width: 100% !important;
-    height: 160px !important;
+    height: 120px !important;
+    aspect-ratio: auto !important;
+  }
+}
+
+@media (min-width: 600px) {
+  .bio-image {
+    aspect-ratio: 4 / 5;
+    height: auto !important;
   }
 }
 

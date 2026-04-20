@@ -66,6 +66,7 @@ export default function Biosseguranca() {
             }}
           >
             <img
+              className="bio-image"
               src="/assets/biosseguranca/mesa_de_cafe.jpeg"
               alt="Mesa de café - ambiente acolhedor"
               style={{
@@ -118,6 +119,7 @@ export default function Biosseguranca() {
               detalhes e às necessidades de cada cliente.
             </p>
             <img
+              className="bio-image"
               src="/assets/biosseguranca/espaco.jpeg"
               alt="Espaço de atendimento"
               style={{
