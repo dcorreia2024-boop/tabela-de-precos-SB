@@ -56,7 +56,7 @@ export default function Biosseguranca() {
 
         {/* BLOCO LOCALIZAÇÃO */}
         <div style={{ marginBottom: "28px" }}>
-          <SectionTitle>Um lugar só seu</SectionTitle>
+          <SectionTitle>Exclusivo para você</SectionTitle>
           <div
             className="bio-section"
             style={{
