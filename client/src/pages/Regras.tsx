@@ -1,8 +1,4 @@
-import BotanicalBg from "@/components/BotanicalBg";
-import FloatingPhoto from "@/components/FloatingPhoto";
-import Footer from "@/components/Footer";
-import NavMenu from "@/components/NavMenu";
-import ProfileHeader from "@/components/ProfileHeader";
+import PageShell from "@/components/PageShell";
 import SectionTitle from "@/components/SectionTitle";
 
 type Block = { title: string; text: string };
@@ -34,129 +30,87 @@ Crianças devem permanecer sob total responsabilidade e supervisão durante todo
 
 export default function Regras() {
   return (
-    <div
-      className="min-h-screen w-full flex items-start sm:items-center justify-center relative"
-      style={{ backgroundColor: "#DDD0C8", padding: "60px 20px" }}
-    >
-      <BotanicalBg />
-
-      <div className="relative z-10 w-full max-w-[480px] mx-auto">
-        <ProfileHeader />
-        <NavMenu />
-
-        <div
-          className="relative"
-          style={{ marginTop: "48px", overflow: "visible" }}
+    <PageShell>
+      {/* Cabeçalho */}
+      <div
+        className="text-center"
+        style={{ display: "flex", flexDirection: "column", gap: "4px" }}
+      >
+        <h1
+          style={{
+            fontFamily: "Butler, serif",
+            fontSize: "22px",
+            color: "#8a6e65",
+            fontWeight: 400,
+            textAlign: "center",
+          }}
         >
-          <FloatingPhoto />
-          <div
-            className="bg-white shadow-2xl rounded-2xl sm:rounded-[28px]"
-            style={{
-              boxShadow: "0 15px 50px rgba(100, 80, 75, 0.15)",
-              overflow: "hidden",
-            }}
-          >
-            <div
-              className="h-1.5"
-              style={{ background: "linear-gradient(90deg, #C8A19C, #91766E)" }}
-            />
+          Regras do Espaço
+        </h1>
+        <p
+          style={{
+            fontSize: "10px",
+            letterSpacing: "3px",
+            color: "#b09088",
+            textAlign: "center",
+          }}
+        >
+          POLÍTICAS DE ATENDIMENTO
+        </p>
+        <div
+          style={{
+            width: "40px",
+            height: "1px",
+            background: "rgba(180, 148, 138, 0.3)",
+            margin: "12px auto 0",
+          }}
+        />
+      </div>
 
-            {/* Conteúdo com padding 56px 28px 32px */}
+      {/* Blocos */}
+      <div style={{ marginTop: "24px" }}>
+        {blocks.map((b, i) => (
+          <div key={b.title} style={{ marginBottom: "28px" }}>
+            {i > 0 && (
+              <div
+                style={{
+                  color: "#c4a898",
+                  fontSize: "14px",
+                  textAlign: "center",
+                  margin: "20px auto",
+                  display: "block",
+                }}
+              >
+                ✦
+              </div>
+            )}
+            <SectionTitle>{b.title}</SectionTitle>
             <div
               style={{
-                paddingTop: "56px",
-                paddingLeft: "28px",
-                paddingRight: "28px",
-                paddingBottom: "0px",
+                textAlign: "center",
+                color: "#4a3e3a",
+                lineHeight: 1.75,
+                fontSize: "13px",
               }}
+              className="sm:text-[14px]"
             >
-              {/* Cabeçalho */}
-              <div
-                className="text-center"
-                style={{ display: "flex", flexDirection: "column", gap: "4px" }}
-              >
-                <h1
-                  style={{
-                    fontFamily: "Butler, serif",
-                    fontSize: "22px",
-                    color: "#8a6e65",
-                    fontWeight: 400,
-                    textAlign: "center",
-                  }}
-                >
-                  Regras do Espaço
-                </h1>
+              {b.text.split("\n\n").map((p, idx) => (
                 <p
+                  key={idx}
                   style={{
-                    fontSize: "10px",
-                    letterSpacing: "3px",
-                    color: "#b09088",
-                    textAlign: "center",
+                    marginBottom: "10px",
+                    whiteSpace: "pre-line",
                   }}
                 >
-                  POLÍTICAS DE ATENDIMENTO
+                  {p}
                 </p>
-                <div
-                  style={{
-                    width: "40px",
-                    height: "1px",
-                    background: "rgba(180, 148, 138, 0.3)",
-                    margin: "12px auto 0",
-                  }}
-                />
-              </div>
-
-              {/* Blocos */}
-              <div style={{ marginTop: "24px" }}>
-                {blocks.map((b, i) => (
-                  <div key={b.title} style={{ marginBottom: "28px" }}>
-                    {i > 0 && (
-                      <div
-                        style={{
-                          color: "#c4a898",
-                          fontSize: "14px",
-                          textAlign: "center",
-                          margin: "20px auto",
-                          display: "block",
-                        }}
-                      >
-                        ✦
-                      </div>
-                    )}
-                    <SectionTitle>{b.title}</SectionTitle>
-                    <div
-                      style={{
-                        textAlign: "center",
-                        color: "#4a3e3a",
-                        lineHeight: 1.75,
-                        fontSize: "13px",
-                      }}
-                      className="sm:text-[14px]"
-                    >
-                      {b.text.split("\n\n").map((p, idx) => (
-                        <p
-                          key={idx}
-                          style={{
-                            marginBottom: "10px",
-                            whiteSpace: "pre-line",
-                          }}
-                        >
-                          {p}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* padding-bottom 32px antes do footer */}
-              <div style={{ height: "4px" }} />
+              ))}
             </div>
-
-            <Footer />
           </div>
-        </div>
+        ))}
       </div>
-    </div>
+
+      <div style={{ height: "4px" }} />
+    </PageShell>
   );
 }

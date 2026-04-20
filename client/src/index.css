@@ -9,17 +9,23 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .nav-menu-scroll::-webkit-scrollbar {
+  .navbar::-webkit-scrollbar {
     display: none;
   }
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 @media (max-width: 599px) {
-  .nav-menu-scroll {
-    padding-right: 24px !important;
-  }
-  .nav-menu-inner {
+  .navbar {
     justify-content: flex-start !important;
+    padding: 0 20px !important;
+  }
+  .navbar-inner {
+    width: max-content;
   }
 }
 

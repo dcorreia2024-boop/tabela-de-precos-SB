@@ -11,28 +11,28 @@ const items = [
 export default function NavMenu() {
   const [location] = useLocation();
   return (
-    <div
-      className="nav-menu-scroll mb-6"
+    <nav
+      className="navbar"
       style={{
         width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        padding: "0 24px",
+        boxSizing: "border-box",
         overflowX: "auto",
+        overflowY: "visible",
         scrollbarWidth: "none",
         msOverflowStyle: "none",
         WebkitOverflowScrolling: "touch",
-        padding: "0 16px",
-        boxSizing: "border-box",
       }}
     >
       <div
-        className="nav-menu-inner"
+        className="navbar-inner"
         style={{
           display: "flex",
           flexWrap: "nowrap",
           gap: "8px",
-          width: "max-content",
-          minWidth: "100%",
-          justifyContent: "center",
-          paddingRight: "8px",
+          padding: "4px 4px",
         }}
       >
         {items.map((it) => {
@@ -43,17 +43,18 @@ export default function NavMenu() {
             <Link
               key={it.href}
               href={it.href}
-              className="rounded-full text-xs font-medium transition-all"
+              className="nav-tab text-xs font-medium transition-all"
               style={{
-                padding: "6px 14px",
+                flexShrink: 0,
+                whiteSpace: "nowrap",
+                padding: "6px 16px",
                 borderRadius: "999px",
+                cursor: "pointer",
                 background: active ? "#b08a8a" : "rgba(255,255,255,0.6)",
                 color: active ? "white" : "#91766E",
                 letterSpacing: "1.5px",
                 textTransform: "uppercase",
                 border: active ? "none" : "1px solid rgba(145,118,110,0.2)",
-                whiteSpace: "nowrap",
-                flexShrink: 0,
               }}
             >
               {it.label}
@@ -61,6 +62,6 @@ export default function NavMenu() {
           );
         })}
       </div>
-    </div>
+    </nav>
   );
 }
