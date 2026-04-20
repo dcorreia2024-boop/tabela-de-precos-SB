@@ -120,9 +120,15 @@ export default function Pagamento() {
               CARTÃO
             </h3>
             <p
-              className="text-xs mt-0.5 text-white"
-              style={{ opacity: 0.85 }}
+              className="mt-0.5 text-white"
+              style={{
+                fontSize: "12px",
+                lineHeight: 1.6,
+                opacity: 0.85,
+              }}
             >
+              Crédito com acréscimo
+              <br />
               Taxa por conta da cliente
             </p>
           </div>
@@ -160,6 +166,22 @@ export default function Pagamento() {
             PIX
           </h3>
         </div>
+
+        {/* Termos */}
+        <p
+          style={{
+            fontSize: "10px",
+            letterSpacing: "1.5px",
+            textAlign: "center",
+            color: "#b09088",
+            fontWeight: 600,
+            textTransform: "uppercase",
+            margin: "16px 0",
+          }}
+        >
+          Ao realizar o pagamento, você declara estar ciente e de acordo com os
+          termos.
+        </p>
 
         {/* Caixa com chave Pix */}
         <div

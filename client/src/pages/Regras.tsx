@@ -8,7 +8,7 @@ const blocks: Block[] = [
     title: "Agendamento & Reserva",
     text: `Meus atendimentos são organizados de forma exclusiva, pensando no melhor resultado para cada cliente ✨
 
-Para confirmação do horário, é necessário um sinal de 50% do valor do procedimento.
+Para agendar um horário, é necessário um sinal de 50% do valor do procedimento.
 
 Esse valor garante sua vaga na agenda e será descontado no dia do atendimento 🤍
 

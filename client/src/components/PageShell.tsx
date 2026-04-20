@@ -63,7 +63,8 @@ export default function PageShell({
             className="bg-white shadow-2xl rounded-2xl sm:rounded-[28px]"
             style={{
               boxShadow: "0 15px 50px rgba(100, 80, 75, 0.15)",
-              overflow: "visible",
+              overflow: "hidden",
+              position: "relative",
               width: "100%",
             }}
           >
@@ -71,8 +72,6 @@ export default function PageShell({
               className="h-1.5"
               style={{
                 background: "linear-gradient(90deg, #C8A19C, #91766E)",
-                borderTopLeftRadius: "inherit",
-                borderTopRightRadius: "inherit",
               }}
             />
             <div
