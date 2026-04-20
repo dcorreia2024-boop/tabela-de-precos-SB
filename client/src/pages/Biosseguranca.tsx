@@ -5,6 +5,19 @@ import NavMenu from "@/components/NavMenu";
 import ProfileHeader from "@/components/ProfileHeader";
 import SectionTitle from "@/components/SectionTitle";
 
+const Separator = () => (
+  <div
+    style={{
+      textAlign: "center",
+      color: "#c4a898",
+      fontSize: "14px",
+      margin: "24px auto",
+    }}
+  >
+    ✦
+  </div>
+);
+
 export default function Biosseguranca() {
   return (
     <div
@@ -19,19 +32,23 @@ export default function Biosseguranca() {
 
         <div
           className="relative"
-          style={{ marginTop: "48px", overflow: "visible" }}
+          style={{ marginTop: "48px", overflow: "visible", marginBottom: "40px" }}
         >
           <FloatingPhoto />
           <div
             className="bg-white shadow-2xl rounded-2xl sm:rounded-[28px]"
             style={{
               boxShadow: "0 15px 50px rgba(100, 80, 75, 0.15)",
-              overflow: "hidden",
+              overflow: "visible",
             }}
           >
             <div
               className="h-1.5"
-              style={{ background: "linear-gradient(90deg, #C8A19C, #91766E)" }}
+              style={{
+                background: "linear-gradient(90deg, #C8A19C, #91766E)",
+                borderTopLeftRadius: "inherit",
+                borderTopRightRadius: "inherit",
+              }}
             />
 
             <div
@@ -79,7 +96,41 @@ export default function Biosseguranca() {
 
               {/* Conteúdo */}
               <div style={{ marginTop: "24px" }}>
-                {/* BLOCO 1 — ESPAÇO */}
+                <Separator />
+
+                {/* BLOCO LOCALIZAÇÃO */}
+                <div style={{ marginBottom: "28px" }}>
+                  <SectionTitle>Localização</SectionTitle>
+                  <img
+                    src="/assets/biosseguranca/mesa_de_cafe.jpeg"
+                    alt="Mesa de café - ambiente acolhedor"
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      objectFit: "cover",
+                      objectPosition: "center top",
+                      borderRadius: "14px",
+                      boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                      display: "block",
+                      marginBottom: "14px",
+                    }}
+                  />
+                  <p
+                    style={{
+                      color: "#4a3e3a",
+                      fontSize: "13px",
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    Um espaço pensado para você se sentir em casa. Café
+                    fresquinho e um ambiente aconchegante te esperam a cada
+                    visita.
+                  </p>
+                </div>
+
+                <Separator />
+
+                {/* BLOCO ESPAÇO */}
                 <div style={{ marginBottom: "28px" }}>
                   <SectionTitle>Espaço</SectionTitle>
                   <p
@@ -93,33 +144,41 @@ export default function Biosseguranca() {
                     Cada atendimento é totalmente personalizado, com atenção aos
                     detalhes e às necessidades de cada cliente.
                   </p>
-                  <img
-                    src="/assets/biosseguranca/espaco.jpeg"
-                    alt="Espaço de atendimento"
+                  <div
                     style={{
-                      width: "100%",
-                      height: "220px",
-                      objectFit: "cover",
+                      position: "relative",
                       borderRadius: "14px",
+                      overflow: "hidden",
                       boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                      display: "block",
                     }}
-                  />
+                  >
+                    <img
+                      src="/assets/biosseguranca/espaco.jpeg"
+                      alt="Espaço de atendimento"
+                      style={{
+                        width: "100%",
+                        height: "220px",
+                        objectFit: "cover",
+                        objectPosition: "center center",
+                        filter: "brightness(1.2) contrast(0.92)",
+                        display: "block",
+                      }}
+                    />
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        pointerEvents: "none",
+                        background:
+                          "linear-gradient(to bottom, transparent 50%, rgba(240,232,224,0.25) 100%)",
+                      }}
+                    />
+                  </div>
                 </div>
 
-                {/* Separador */}
-                <div
-                  style={{
-                    textAlign: "center",
-                    color: "#c4a898",
-                    fontSize: "14px",
-                    margin: "24px auto",
-                  }}
-                >
-                  ✦
-                </div>
+                <Separator />
 
-                {/* BLOCO 2 — MATERIAIS */}
+                {/* BLOCO MATERIAIS */}
                 <div style={{ marginBottom: "28px" }}>
                   <SectionTitle>Materiais</SectionTitle>
                   <p
@@ -146,8 +205,9 @@ export default function Biosseguranca() {
                       alt="Materiais esterilizados"
                       style={{
                         width: "100%",
-                        height: "160px",
+                        height: "150px",
                         objectFit: "cover",
+                        objectPosition: "center center",
                         borderRadius: "12px",
                         boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
                         display: "block",
@@ -158,8 +218,9 @@ export default function Biosseguranca() {
                       alt="Itens descartáveis"
                       style={{
                         width: "100%",
-                        height: "160px",
+                        height: "150px",
                         objectFit: "cover",
+                        objectPosition: "center center",
                         borderRadius: "12px",
                         boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
                         display: "block",

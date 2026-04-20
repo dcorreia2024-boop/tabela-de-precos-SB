@@ -9,6 +9,18 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  .nav-menu-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .nav-menu-scroll {
+    padding-right: 24px !important;
+  }
+  .nav-menu-inner {
+    justify-content: flex-start !important;
+  }
 }
 
 @custom-variant dark (&:is(.dark *));
