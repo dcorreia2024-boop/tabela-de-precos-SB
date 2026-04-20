@@ -56,7 +56,7 @@ export default function Biosseguranca() {
 
         {/* BLOCO LOCALIZAÇÃO */}
         <div style={{ marginBottom: "28px" }}>
-          <SectionTitle>Localização</SectionTitle>
+          <SectionTitle>Um lugar só seu</SectionTitle>
           <div
             className="bio-section"
             style={{
@@ -88,8 +88,8 @@ export default function Biosseguranca() {
                 lineHeight: 1.7,
               }}
             >
-              Um espaço pensado para você se sentir em casa. Café fresquinho e
-              um ambiente aconchegante te esperam a cada visita.
+              Um ambiente leve e aconchegante, onde cada detalhe é pensado
+              para tornar sua experiência ainda mais especial.
             </p>
           </div>
         </div>
