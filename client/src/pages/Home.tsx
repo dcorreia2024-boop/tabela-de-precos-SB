@@ -8,7 +8,7 @@ const sections: Section[] = [
   {
     title: "Procedimentos em Unhas Naturais",
     items: [
-      { name: "Blindagem + esmaltação em gel", price: "R$ 80,00" },
+      { name: "Blindagem + esmaltação em gel", price: "R$ 100,00" },
       { name: "Banho de Gel", price: "R$ 120,00" },
       { name: "Esmaltação em Gel (Mãos e Pés)", price: "R$ 160,00" },
     ],
